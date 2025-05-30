@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.web.WebProperties;
 
 @Entity
 @Table (name= "productos")
-public class Producto {
+public class weProducto {
 @Id
 @GeneratedValue(Strategy= GenerationType.IDENTITY)
 @Column(name="id_producto")
