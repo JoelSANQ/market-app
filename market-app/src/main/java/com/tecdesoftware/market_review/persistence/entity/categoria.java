@@ -2,6 +2,8 @@ package com.tecdesoftware.market_review.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name="categorias")
 public class categoria {
@@ -13,6 +15,8 @@ public class categoria {
     private String descripcion;
     private Boolean estado;
 
+    @OneToMany(mappedBy = "categoria")
+    private List<weProducto> weProductos;
 
     public String getDescripcion() {
         return descripcion;

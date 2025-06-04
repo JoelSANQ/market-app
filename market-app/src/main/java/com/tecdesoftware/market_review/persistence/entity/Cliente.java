@@ -1,9 +1,6 @@
 package com.tecdesoftware.market_review.persistence.entity;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import java.util.List;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="clientes")
@@ -17,6 +14,15 @@ public class Cliente {
     private String apellidos;
     @Column(name = "correo_electronico")
     private String correoelectronico;
+
+    @OneToMany (mappedBy = "cliente")
+    private List<Compra> compras;
+
+    @OneToMany (mappedBy = "categorias")
+    private List<weProducto> compras_productos;
+
+    @OneToMany (mappedBy = "compras")
+    private List<CompraProducto> compraProductos;
 
     public int getId() {
         return id;
