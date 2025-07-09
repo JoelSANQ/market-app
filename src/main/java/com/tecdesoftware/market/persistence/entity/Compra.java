@@ -34,7 +34,7 @@ public class Compra {
     private Cliente cliente;
 
     //Una compra con muchos productos
-    @OneToMany(mappedBy = "producto")
+    @OneToMany(mappedBy = "compra")
     private List<CompraProducto> Productos;
 
     // Getters y Setters
