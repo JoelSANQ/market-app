@@ -2,6 +2,7 @@ package com.tecdesoftware.market.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -13,19 +14,19 @@ public class Compra {
     @Column(name = "id_compra")
     private Integer idCompra;
 
-    private String nombre;
 
     @Column(name = "id_cliente")
-    private Integer idCliente;
+    private String idCliente;
 
-    private String fecha;
+    private LocalDateTime fecha;
 
     @Column(name = "medio_pago")
-    private Double medioPago;
+    private String medioPago;
 
-    private Integer comentario;
+    private String comentario;
 
-    private Boolean estado;
+    @Column(name = "estado", columnDefinition = "CHAR(1)")
+    private String estado;
 
     //Relación con la entidad cliente: Muchas compras a un cliente
     @ManyToOne
@@ -47,51 +48,43 @@ public class Compra {
         this.idCompra = idCompra;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Integer getIdCliente() {
+    public String getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(Integer idCliente) {
+    public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
 
-    public String getFecha() {
+    public LocalDateTime getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
 
-    public Double getMedioPago() {
+    public String getMedioPago() {
         return medioPago;
     }
 
-    public void setMedioPago(Double medioPago) {
+    public void setMedioPago(String medioPago) {
         this.medioPago = medioPago;
     }
 
-    public Integer getComentario() {
+    public String getComentario() {
         return comentario;
     }
 
-    public void setComentario(Integer comentario) {
+    public void setComentario(String comentario) {
         this.comentario = comentario;
     }
 
-    public Boolean getEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(Boolean estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 

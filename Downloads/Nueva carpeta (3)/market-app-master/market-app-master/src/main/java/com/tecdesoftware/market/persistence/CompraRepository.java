@@ -27,13 +27,7 @@ public class CompraRepository implements PurchaseRepository {
 
     @Override
     public Optional<List<Purchase>> getByClient(String clienteId) {
-        Integer idClienteInt;
-        try {
-            idClienteInt = Integer.valueOf(clienteId);
-        } catch (NumberFormatException e) {
-            return Optional.empty();  // Si no es válido, devuelve vacío
-        }
-        return compraCrudRepository.findByIdCliente(idClienteInt)
+        return compraCrudRepository.findByIdCliente(clienteId)
                 .map(compras -> mapper.toPurchase(compras));
     }
 

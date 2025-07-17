@@ -6,7 +6,7 @@ import java.util.List;
 //Ticket de compras, gestionar las compras
 public class Purchase {
     private int purchaseId;
-    private String clienteId;
+    private Integer clienteId;
     private LocalDateTime date;
     private String paymentMethod;
     private String comment;
@@ -21,11 +21,11 @@ public class Purchase {
         this.purchaseId = purchaseId;
     }
 
-    public String getClienteId() {
+    public Integer getClienteId() {
         return clienteId;
     }
 
-    public void setClienteId(String clienteId) {
+    public void setClienteId(Integer clienteId) {
         this.clienteId = clienteId;
     }
 
